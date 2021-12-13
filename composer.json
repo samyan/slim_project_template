@@ -1,0 +1,41 @@
+{
+	"name": "samyan/slim_project_template",
+	"description": "Slim framework project template",
+	"type": "project",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "SamYan",
+			"email": "spetrosyan@codeblock.pro"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"App\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"App\\": "src/"
+		}
+	},
+	"require": {
+		"slim/slim": "4.*",
+		"tuupola/slim-jwt-auth": "^3.5",
+		"monolog/monolog": "^2.3",
+		"cakephp/orm": "^4.3",
+		"ramsey/uuid": "^4.2",
+		"tuupola/base62": "^2.1",
+		"php-di/php-di": "^6.3",
+		"akrabat/ip-address-middleware": "^2.1",
+		"slim/psr7": "^1.5"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.6"
+	},
+    "scripts": {
+        "start": "php -S localhost:8080 -t public index.php",
+        "check-code": "phpcs -p --standard=phpcs.xml src/",
+        "fix-code": "phpcbf -p --standard=phpcs.xml src/"
+    }
+}

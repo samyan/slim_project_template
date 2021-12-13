@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="custom">
+    <description>Custom config</description>
+
+    <rule ref="PSR2"/>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="500"/>
+            <property name="absoluteLineLimit" value="500"/>
+        </properties>
+    </rule>
+</ruleset>
