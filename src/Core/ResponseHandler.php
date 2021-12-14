@@ -11,16 +11,19 @@ class ResponseHandler
     const INTERNAL_ERROR = [
         'status' => 500,
         'code' => 500,
+        'message' => 'Internal error'
     ];
 
     const AUTH_ERROR = [
         'status' => 401,
         'code' => 401,
+        'message' => 'Invalid authentication'
     ];
 
     const PERMISSIONS_ERROR = [
         'status' => 403,
         'code' => 403,
+        'message' => 'Insufficient permissions'
     ];
 
     /**
@@ -36,7 +39,9 @@ class ResponseHandler
         $isErrorExists = count($error) > 0;
 
         if ($isErrorExists) {
-            $responseData = ['error' => true, 'code' => $error['code'], 'desc' => $data];
+            ['code' => $code, 'message' => $message] = $error;
+
+            $responseData = ['error' => true, 'code' => $code, 'message' => $message];
         } else {
             $responseData = ['error' => false, 'data' => $data];
         }

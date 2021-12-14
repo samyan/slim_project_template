@@ -36,7 +36,8 @@ $container->set('JwtAuthentication', function (ContainerInterface $container) {
         'error' => function ($response, $arguments) {
             $data = [
                 'error' => true,
-                'data' => ['code' => 401, 'desc' => $arguments['message']]
+                'code' => 401,
+                'message' => $arguments['message']
             ];
 
             $response
